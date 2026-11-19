@@ -4,7 +4,6 @@ from app.database import Base
 
 class User(Base):
     __tablename__ = "users"
-
     """
     the table should have the following columns:
     id (Integer, auto-numbered, pk)
@@ -15,5 +14,4 @@ class User(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     email: Mapped[str] = mapped_column(unique=True)
     password_hash: Mapped[str]
-
 
