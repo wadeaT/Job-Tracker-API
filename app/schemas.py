@@ -23,8 +23,9 @@ class UserOut(BaseModel):
 class UserCreate(BaseModel):
     email: EmailStr
     password: str = Field(min_length=8)
-
+    
     @field_validator("email")
     @classmethod
     def convert_to_lowercase(cls, value: str) -> str:
         return value.lower()
+    
